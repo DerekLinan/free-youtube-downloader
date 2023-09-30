@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "webextensions": true
+  },
+  "globals": {
+    "globalThis": false
+  },
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": 0,
+    "no-undef": ["warn"],
+    "no-proto": ["error"],
+    "prefer-arrow-callback": ["warn"],
+    "prefer-spread": ["warn"]
+  }
+}
