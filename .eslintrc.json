@@ -12,11 +12,21 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["dist/*", "node_modules/*"],
   "rules": {
     "no-console": 0,
-    "no-undef": ["warn"],
+    "no-undef": ["error"],
     "no-proto": ["error"],
     "prefer-arrow-callback": ["warn"],
-    "prefer-spread": ["warn"]
+    "prefer-spread": ["warn"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["webpack.config.js"] }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "js": "always" }
+    ]
   }
 }

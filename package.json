@@ -2,18 +2,29 @@
   "name": "free-youtube-downloader",
   "version": "1.0.0",
   "description": "Free Firefox web extension to download youtube videos.",
-  "main": "download-manager.js",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "build-prod": "webpack --mode=production",
+    "start": "webpack -w && web-ext run"
   },
   "author": "Derek Linan",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
     "eslint": "^8.50.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.3"
+    "html-webpack-plugin": "^5.5.3",
+    "prettier": "^3.0.3",
+    "style-loader": "^3.3.3",
+    "web-ext": "^7.8.0",
+    "web-ext-plugin": "^2.8.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
