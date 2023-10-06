@@ -3,9 +3,11 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path, { resolve } from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
 
 // eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 
 const buildMode = 'development';
 
@@ -41,7 +43,7 @@ export default [
         sourceDir: resolve(__dirname, 'dist'),
         startUrl: 'about:debugging#/runtime/this-firefox',
         devtools: true,
-        browserConsole: true,
+        // browserConsole: true,
       }),
       new HtmlWebpackPlugin({
         title: 'popup',
@@ -62,6 +64,17 @@ export default [
       path: resolve(__dirname, 'dist', 'popup'),
       filename: 'popup.js',
       clean: true,
+    },
+    resolve: {
+      fallback: {
+        stream: require.resolve('stream-browserify'),
+        http: require.resolve('stream-http'),
+        https: require.resolve('https-browserify'),
+        timers: require.resolve('timers-browserify'),
+        querystring: require.resolve('querystring-es3'),
+        vm: require.resolve('vm-browserify'),
+        url: require.resolve('url'),
+      },
     },
     devtool: 'source-map',
   },
