@@ -1,0 +1,164 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --button: #eeeeee;
+    --text: #000000;
+    --text-alt: #444444;
+    --yt: #ff0000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --button: #333333;
+    --text: #ffffff;
+    --text-alt: #bbbbbb;
+    --yt: #ff0000;
+  }
+}
+
+h1 {
+  font-size: x-large;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  /* border: solid green 3px; */
+
+  color: var(--text);
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+/* html, */
+body {
+  width: 250px;
+  background-color: var(--bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--yt);
+}
+
+a:hover {
+  filter: brightness(0.8);
+}
+
+a:active {
+  color: blue;
+}
+
+button {
+  border: none;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+
+  color: var(--text);
+  background-color: var(--button);
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
+
+button:active {
+  filter: brightness(0.6);
+}
+
+img {
+  padding: 0;
+  margin: 0;
+  width: 25%;
+  object-fit: contain;
+}
+
+#popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#settings {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+#settings > p {
+  font-size: x-small;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+#settings > img {
+  width: 24px;
+}
+
+#settings > img:active {
+  filter: brightness(0.6);
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#asterisk-text {
+  text-align: center;
+  color: var(--text-alt);
+}
+
+.with-detail {
+  width: 450px;
+}
+
+.without-detail {
+  width: 200px;
+}
+
+.without-detail .detail {
+  display: none;
+}
+
+#button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.button-detail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.button-detail > p {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+button#custom {
+  background-color: var(--yt);
+}
