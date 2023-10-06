@@ -150,7 +150,7 @@ img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .button-detail > p {
