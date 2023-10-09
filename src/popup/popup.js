@@ -1,6 +1,10 @@
 import './popup.css';
 import { validateURL } from 'ytdl-core';
-import { QUALITIES } from '../utils/messager.js';
+import {
+  MESSAGE_TYPE,
+  QUALITIES,
+  sendMessageToBackground,
+} from '../utils/messager.js';
 
 async function GetActiveTab() {
   return (
@@ -13,11 +17,12 @@ async function GetActiveTab() {
  * @param {string} quality string as specified by the QUALITIES object
  */
 async function Download(quality) {
-  console.log(quality);
-  const { url } = await GetActiveTab();
-  console.log(url);
+  const tab = await GetActiveTab();
 
   // TODO tell background to add the download at this url with specified quality to the queue
+  sendMessageToBackground(MESSAGE_TYPE.DOWNLOAD, {
+    meta: { quality, title: tab.title, url: tab.url },
+  });
 }
 
 const { url: currentURL } = await GetActiveTab();

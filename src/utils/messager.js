@@ -22,6 +22,11 @@ export async function sendMessageToContentScript(
   }
 }
 
+export const MESSAGE_TYPE = {
+  DOWNLOAD: 'download',
+  CANCEL: 'cancel',
+};
+
 export const QUALITIES = {
   BEST: 'best quality',
   VIDEO: 'video only',
