@@ -7,7 +7,7 @@
   "globals": {
     "globalThis": false
   },
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "prettier"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
