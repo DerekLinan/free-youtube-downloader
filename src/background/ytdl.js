@@ -40,7 +40,7 @@ export function mutateStatus(downloadObject, status, error) {
  * @param {DownloadObject} downloadObject the download to check
  */
 export default async function downloadYoutubeVideo(downloadObject) {
-  mutateStatus(STATUS.DOWNLOADING);
+  mutateStatus(downloadObject, STATUS.DOWNLOADING);
   try {
     switch (downloadObject.quality) {
       case QUALITIES.BEST:
@@ -60,9 +60,9 @@ export default async function downloadYoutubeVideo(downloadObject) {
           `unknown download quality: ${downloadObject.quality}`,
         );
     }
-    mutateStatus(STATUS.FINISHED);
+    mutateStatus(downloadObject, STATUS.FINISHED);
   } catch (error) {
     console.error(error);
-    mutateStatus(STATUS.ERROR, error);
+    mutateStatus(downloadObject, STATUS.ERROR, error);
   }
 }
