@@ -2,7 +2,7 @@ import {
   isDownloadInQueue,
   removeFromQueue,
 } from '../utils/download.js';
-import { MESSAGE_TYPE } from '../utils/messager.js';
+import { BG_MESSAGE } from '../utils/types.js';
 import downloadYoutubeVideo from './ytdl.js';
 
 // eslint-disable-next-line prefer-const
@@ -33,10 +33,10 @@ function addToQueue(data) {
 
 browser.runtime.onMessage.addListener((message) => {
   switch (message.type) {
-    case MESSAGE_TYPE.DOWNLOAD:
+    case BG_MESSAGE.DOWNLOAD:
       addToQueue(message.data);
       break;
-    case MESSAGE_TYPE.CANCEL:
+    case BG_MESSAGE.CANCEL:
       // TODO handle cancelation of video download
       break;
     default:

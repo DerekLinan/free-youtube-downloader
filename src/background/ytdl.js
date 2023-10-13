@@ -1,4 +1,4 @@
-import { QUALITIES, STATUS } from '../utils/messager.js';
+import { QUALITIES, STATUS } from '../utils/types';
 
 /**
  *

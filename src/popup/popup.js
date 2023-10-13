@@ -1,11 +1,7 @@
 import './popup.css';
 import { validateURL } from 'ytdl-core';
-import {
-  MESSAGE_TYPE,
-  QUALITIES,
-  STATUS,
-  sendMessageToBackground,
-} from '../utils/messager.js';
+import { sendMessageToBackground } from '../utils/messager.js';
+import { BG_MESSAGE, QUALITIES, STATUS } from '../utils/types.js';
 
 async function GetActiveTab() {
   return (
@@ -20,8 +16,7 @@ async function GetActiveTab() {
 async function Download(quality) {
   const tab = await GetActiveTab();
 
-  // TODO tell background to add the download at this url with specified quality to the queue
-  sendMessageToBackground(MESSAGE_TYPE.DOWNLOAD, {
+  sendMessageToBackground(BG_MESSAGE.DOWNLOAD, {
     meta: {
       quality,
       title: tab.title,
