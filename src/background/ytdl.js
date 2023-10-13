@@ -23,7 +23,7 @@ async function downloadCustomQuality(downloadObject) {
  * @param {*} error
  */
 export function mutateStatus(downloadObject, status, error) {
-  if (!Object.values(QUALITIES).includes(status))
+  if (!Object.values(STATUS).includes(status))
     console.error(
       `Cannot update status to ${status}. Use STATUS object instead.`,
     );
