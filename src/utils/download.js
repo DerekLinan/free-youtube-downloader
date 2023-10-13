@@ -4,9 +4,7 @@
  */
 export function isSameDownload(a, b) {
   return (
-    a.meta.url === b.url &&
-    a.meta.title === b.title &&
-    a.meta.quality === b.quality
+    a.url === b.url && a.title === b.title && a.quality === b.quality
   );
 }
 
