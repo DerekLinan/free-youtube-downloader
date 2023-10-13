@@ -9,6 +9,11 @@ import downloadYoutubeVideo from './ytdl.js';
 let downloadQueue = [];
 let isDownloading = false;
 
+/**
+ * Handle downloading status and queue logic
+ * @param {import('../utils/types.js').DownloadObject} toDownload
+ * @returns
+ */
 async function download(toDownload) {
   if (isDownloading) return;
   isDownloading = true;
@@ -21,11 +26,14 @@ async function download(toDownload) {
   if (downloadQueue.length > 0) download(downloadQueue[0]);
 }
 
-function addToQueue(data) {
-  const { meta } = data;
-  if (isDownloadInQueue(meta, downloadQueue)) return;
+/**
+ * Adds the downloadObject to the queue if it does not already exist in the queue.
+ * @param {import('../utils/types.js').DownloadObject} downloadObject
+ */
+function addToQueue(downloadObject) {
+  if (isDownloadInQueue(downloadObject, downloadQueue)) return;
 
-  downloadQueue.push(data);
+  downloadQueue.push(downloadObject);
 
   if (!isDownloading) download(downloadQueue[0]);
   console.log(downloadQueue);

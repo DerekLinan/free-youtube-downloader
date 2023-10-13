@@ -12,8 +12,8 @@ export function isSameDownload(a, b) {
 
 /**
  * Checks if download object is in the queue
- * @param {{quality: string, title: string, url: string, status: string}} downloadObject the download to check
- * @param {Array.<{quality: string, title: string, url: string, status: string}>} downloadQueue the queue of youtube videos to download
+ * @param {import("../background/ytdl").DownloadObject} downloadObject the download to check
+ * @param {Array.<import("./types").DownloadObject>} downloadQueue the queue of youtube videos to download
  * @returns {boolean}
  */
 export function isDownloadInQueue(downloadObject, downloadQueue) {
@@ -24,8 +24,8 @@ export function isDownloadInQueue(downloadObject, downloadQueue) {
 
 /**
  * Removes the download object from the queue
- * @param {{quality: string, title: string, url: string}} objectToRemove
- * @param {Array.<{quality: string, title: string, url: string}>} downloadQueue
+ * @param {import("./types").DownloadObject} objectToRemove
+ * @param {Array.<import("./types").DownloadObject>} downloadQueue
  */
 export function removeFromQueue(objectToRemove, downloadQueue) {
   // eslint-disable-next-line no-param-reassign, no-unused-vars

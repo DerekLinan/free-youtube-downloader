@@ -1,10 +1,20 @@
-import { QUALITIES, STATUS } from '../utils/types';
+import { QUALITIES, STATUS } from '../utils/types.js';
 
 /**
- *
+ * Download the youtube video from preset options
  * @param {DownloadObject} downloadObject
  */
-async function downloadPresetQuality(downloadObject) {}
+async function downloadPresetQuality(downloadObject) {
+  throw new Error('not implemented yet.');
+}
+
+/**
+ * Download the youtube video from custom options
+ * @param {DownloadObject} downloadObject
+ */
+async function downloadCustomQuality(downloadObject) {
+  throw new Error('not implemented yet.');
+}
 
 /**
  * Change the status of the referenced download object. This is an intentional mutation/side effect.
@@ -40,7 +50,7 @@ export default async function downloadYoutubeVideo(downloadObject) {
         await downloadPresetQuality(downloadObject);
         break;
       case QUALITIES.CUSTOM:
-        // TODO downloadCustomQuality(downloadObject)
+        await downloadCustomQuality(downloadObject);
         break;
       default:
         console.log(

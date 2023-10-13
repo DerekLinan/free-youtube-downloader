@@ -17,12 +17,10 @@ async function Download(quality) {
   const tab = await GetActiveTab();
 
   sendMessageToBackground(BG_MESSAGE.DOWNLOAD, {
-    meta: {
-      quality,
-      title: tab.title,
-      url: tab.url,
-      status: STATUS.NOT_STARTED,
-    },
+    quality,
+    title: tab.title,
+    url: tab.url,
+    status: STATUS.NOT_STARTED,
   });
 }
 
