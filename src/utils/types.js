@@ -60,7 +60,7 @@ export const QUALITIES = {
  * @enum {Status}
  */
 export const STATUS = {
-  NOT_STARTED: 'not yet started',
+  NOT_STARTED: 'not started',
   DOWNLOADING: 'downloading',
   FINISHED: 'finished',
   ERROR: 'error occurred',
