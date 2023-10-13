@@ -1,5 +1,5 @@
 /**
- * Checks if the download object a is the same as b
+ * Checks if the downloadObject a is the same as b
  * @returns {boolean}
  */
 export function isSameDownload(a, b) {
@@ -12,8 +12,8 @@ export function isSameDownload(a, b) {
 
 /**
  * Checks if download object is in the queue
- * @param {{quality: string, title: string, url: string}} downloadObject the download to check
- * @param {Array.<{quality: string, title: string, url: string}>} downloadQueue the queue of youtube videos to download
+ * @param {{quality: string, title: string, url: string, status: string}} downloadObject the download to check
+ * @param {Array.<{quality: string, title: string, url: string, status: string}>} downloadQueue the queue of youtube videos to download
  * @returns {boolean}
  */
 export function isDownloadInQueue(downloadObject, downloadQueue) {

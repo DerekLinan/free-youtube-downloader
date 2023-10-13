@@ -34,3 +34,16 @@ export const QUALITIES = {
   FAST: 'fastest quality',
   CUSTOM: 'custom quality',
 };
+
+/**
+ * Enum for the status of a downloadObject
+ * @readonly
+ * @enum {string}
+ */
+export const STATUS = {
+  NOT_STARTED: 'not yet started',
+  DOWNLOADING: 'downloading',
+  FINISHED: 'finished',
+  ERROR: 'error occurred',
+  RETRY: 're-try queued',
+};

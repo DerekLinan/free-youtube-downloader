@@ -3,6 +3,7 @@ import { validateURL } from 'ytdl-core';
 import {
   MESSAGE_TYPE,
   QUALITIES,
+  STATUS,
   sendMessageToBackground,
 } from '../utils/messager.js';
 
@@ -21,7 +22,12 @@ async function Download(quality) {
 
   // TODO tell background to add the download at this url with specified quality to the queue
   sendMessageToBackground(MESSAGE_TYPE.DOWNLOAD, {
-    meta: { quality, title: tab.title, url: tab.url },
+    meta: {
+      quality,
+      title: tab.title,
+      url: tab.url,
+      status: STATUS.NOT_STARTED,
+    },
   });
 }
 

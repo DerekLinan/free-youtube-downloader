@@ -3,6 +3,7 @@ import {
   removeFromQueue,
 } from '../utils/download.js';
 import { MESSAGE_TYPE } from '../utils/messager.js';
+import downloadYoutubeVideo from './ytdl.js';
 
 // eslint-disable-next-line prefer-const
 let downloadQueue = [];
@@ -12,7 +13,8 @@ async function download(toDownload) {
   if (isDownloading) return;
   isDownloading = true;
 
-  // TODO handle download
+  await downloadYoutubeVideo(toDownload);
+
   removeFromQueue(toDownload, downloadQueue);
 
   isDownloading = false;
